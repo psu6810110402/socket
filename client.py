@@ -17,8 +17,6 @@ def connect_server(server_ip):
                 user_input = input("คุณ >> ")
             except EOFError:
                 user_input = ""
-
-            # ย้ายส่วนนี้เข้ามาใน Loop
             client_sock.sendall(user_input.encode('UTF-8'))
             
             if user_input == "":
@@ -40,6 +38,4 @@ if __name__ == "__main__":
         server_ip = input("กรุณาใส่ IP address ของ Server: ").strip()
     else:
         server_ip = sys.argv[1]
-    
-    # แก้ชื่อฟังก์ชันให้ตรงกัน
     connect_server(server_ip)
